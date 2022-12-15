@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 15-12-2022 a las 08:34:05
+-- Tiempo de generación: 15-12-2022 a las 09:51:04
 -- Versión del servidor: 10.4.18-MariaDB
 -- Versión de PHP: 8.0.3
 
@@ -26,32 +26,82 @@ SET time_zone = "+00:00";
 --
 -- Estructura de tabla para la tabla `cliente`
 --
--- Error leyendo la estructura de la tabla audiovisual.cliente: #1932 - Table 'audiovisual.cliente' doesn't exist in engine
--- Error leyendo datos de la tabla audiovisual.cliente: #1064 - Algo está equivocado en su sintax cerca 'FROM `audiovisual`.`cliente`' en la linea 1
+
+CREATE TABLE `cliente` (
+  `id` int(11) NOT NULL,
+  `nombre` varchar(222) NOT NULL,
+  `apellidos` varchar(222) NOT NULL,
+  `hrs_rentadas` varchar(222) NOT NULL,
+  `n_sala` varchar(222) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
 
 --
 -- Estructura de tabla para la tabla `personal`
 --
--- Error leyendo la estructura de la tabla audiovisual.personal: #1932 - Table 'audiovisual.personal' doesn't exist in engine
--- Error leyendo datos de la tabla audiovisual.personal: #1064 - Algo está equivocado en su sintax cerca 'FROM `audiovisual`.`personal`' en la linea 1
+
+CREATE TABLE `personal` (
+  `id` int(11) NOT NULL,
+  `nombre` varchar(222) NOT NULL,
+  `apellidos` varchar(222) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
 
 --
 -- Estructura de tabla para la tabla `sala`
 --
--- Error leyendo la estructura de la tabla audiovisual.sala: #1932 - Table 'audiovisual.sala' doesn't exist in engine
--- Error leyendo datos de la tabla audiovisual.sala: #1064 - Algo está equivocado en su sintax cerca 'FROM `audiovisual`.`sala`' en la linea 1
 
--- --------------------------------------------------------
+CREATE TABLE `sala` (
+  `id` int(11) NOT NULL,
+  `n_sala` varchar(222) NOT NULL,
+  `hrs_rentadas` varchar(222) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Estructura de tabla para la tabla `usuario`
+-- Índices para tablas volcadas
 --
--- Error leyendo la estructura de la tabla audiovisual.usuario: #1932 - Table 'audiovisual.usuario' doesn't exist in engine
--- Error leyendo datos de la tabla audiovisual.usuario: #1064 - Algo está equivocado en su sintax cerca 'FROM `audiovisual`.`usuario`' en la linea 1
+
+--
+-- Indices de la tabla `cliente`
+--
+ALTER TABLE `cliente`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indices de la tabla `personal`
+--
+ALTER TABLE `personal`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indices de la tabla `sala`
+--
+ALTER TABLE `sala`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- AUTO_INCREMENT de las tablas volcadas
+--
+
+--
+-- AUTO_INCREMENT de la tabla `cliente`
+--
+ALTER TABLE `cliente`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT de la tabla `personal`
+--
+ALTER TABLE `personal`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT de la tabla `sala`
+--
+ALTER TABLE `sala`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
